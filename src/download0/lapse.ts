@@ -1870,7 +1870,7 @@ export function lapse () {
     const setup_success = setup()
     if (!setup_success) {
       log('Setup failed')
-      send_notification('Lapse: Setup failed')
+      send_notification('L: Setup failed')
       return false
     }
     log('Setup completed')
@@ -1882,14 +1882,14 @@ export function lapse () {
 
     if (sd_pair === null) {
       log('[FAILED] Stage 1')
-      send_notification('Lapse: FAILED at Stage 1')
+      send_notification('L: FAILED at Stage 1')
       return false
     }
     log('Stage 1 completed')
 
     if (sds === null) {
       log('Failed to create socket list')
-      send_notification('Lapse: FAILED at Stage 1 (sds creation)')
+      send_notification('L: FAILED at Stage 1 (sds creation)')
       return false
     }
 
@@ -2142,7 +2142,7 @@ function cleanup () {
 }
 
 function cleanup_fail () {
-  utils.notify('Lapse Failed! reboot and try again! UwU')
-  jsmaf.root.children.push(bg_fail)
+  utils.notify('Reboot and try again')
+  // jsmaf.root.children.push(bg_fail)
   cleanup()
 }

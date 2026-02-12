@@ -1180,7 +1180,7 @@ function jailbreak () {
   jailbreak_shared(FW_VERSION)
 
   log('Jailbreak Complete - JAILBROKEN')
-  utils.notify('The Vue-after-Free team congratulates you\nNetCtrl Finished OK\nEnjoy freedom')
+  utils.notify('NC OK')
 
   cleanup(false) // Close sockets and kill workers on success
   show_success()

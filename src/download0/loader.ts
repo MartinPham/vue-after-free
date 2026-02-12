@@ -26,15 +26,16 @@ stats.load()
 
 export function show_success () {
   setTimeout(() => {
-    jsmaf.root.children.push(bg_success)
+    utils.notify('OK')
+    // jsmaf.root.children.push(bg_success)
     log('Logging Success...')
     stats.incrementSuccess()
   }, 2000)
 }
 
-const audio = new jsmaf.AudioClip()
-audio.volume = 0.5  // 50% volume
-audio.open('file://../download0/sfx/bgm.wav')
+// const audio = new jsmaf.AudioClip()
+// audio.volume = 0.5  // 50% volume
+// audio.open('file://../download0/sfx/bgm.wav')
 
 const is_jailbroken = checkJailbroken()
 
@@ -105,7 +106,7 @@ if (!is_jailbroken) {
   const jb_behavior = (typeof CONFIG !== 'undefined' && typeof CONFIG.jb_behavior === 'number') ? CONFIG.jb_behavior : 0
 
   stats.incrementTotal()
-  utils.notify(FW_VERSION + ' Detected!')
+  utils.notify(FW_VERSION + ' started')
 
   let use_lapse = false
 
@@ -168,7 +169,7 @@ if (!is_jailbroken) {
     }
   }
 } else {
-  utils.notify('Already Jailbroken!')
+  utils.notify('OK')
   include('main-menu.js')
 }
 
